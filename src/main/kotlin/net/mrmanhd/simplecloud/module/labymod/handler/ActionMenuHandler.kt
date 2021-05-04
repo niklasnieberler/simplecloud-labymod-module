@@ -3,6 +3,7 @@ package net.mrmanhd.simplecloud.module.labymod.handler
 import eu.thesimplecloud.api.player.ICloudPlayer
 import net.labymod.serverapi.api.LabyAPI
 import net.labymod.serverapi.api.serverinteraction.actionmenu.ActionType
+import net.labymod.serverapi.api.serverinteraction.actionmenu.MenuEntry
 import net.mrmanhd.simplecloud.module.labymod.config.Config
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.ActionMenuConfiguration
 import org.bukkit.entity.Player
@@ -14,6 +15,8 @@ import org.bukkit.entity.Player
 
 class ActionMenuHandler {
 
+    private val menuEntryMap = hashMapOf<Player, ArrayList<MenuEntry>>()
+
     fun handleActionMenu(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
         val menuTransmitter = LabyAPI.getService().menuTransmitter
 
@@ -22,17 +25,31 @@ class ActionMenuHandler {
             .forEach {
 
             val menuEntry = LabyAPI.getService().menuEntryFactory.create(it.displayName, it.value, ActionType.valueOf(it.type))
-            menuTransmitter.addEntry(menuEntry)
+            addMenuEntry(player, menuEntry)
 
         }
 
-        menuTransmitter.transmit(player.uniqueId)
+        menuEntryMap[player]?.let {
+            menuTransmitter.addEntries(*it.toTypedArray()).transmit(player.uniqueId)
+            menuEntryMap.remove(player)
+        }
 
     }
 
     private fun getActionMenuConfigurationList(config: Config, cloudPlayer: ICloudPlayer): List<ActionMenuConfiguration> {
         return config.actionMenuConfigurationList
             .filter { !(it.serverGroup != null && it.serverGroup != cloudPlayer.getConnectedServer()!!.getGroupName()) }
+    }
+
+    private fun addMenuEntry(player: Player, menuEntry: MenuEntry) {
+        if (menuEntryMap[player] == null) {
+            menuEntryMap[player] = arrayListOf(menuEntry)
+        }
+
+        val arrayList = menuEntryMap[player]!!
+        arrayList.add(menuEntry)
+
+        menuEntryMap[player] = arrayList
     }
 
 }
