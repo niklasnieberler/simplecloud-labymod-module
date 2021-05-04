@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a>
+  <a href="https://github.com/MrManHD/simplecloud-labymod-module">
     <img src="https://mrmanhd.tryhub.de/img/github-logo.png" alt="Logo" width="80" height="80">
   </a>
 
