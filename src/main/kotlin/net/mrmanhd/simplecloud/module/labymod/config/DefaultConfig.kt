@@ -1,9 +1,13 @@
 package net.mrmanhd.simplecloud.module.labymod.config
 
-import net.labymod.serverapi.api.serverinteraction.actionmenu.ActionType
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.ActionMenuConfiguration
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.PlayingOnConfiguration
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.RichPresenceConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenuConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemode.PlayingGamemode
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresence
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenu
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemode.PlayingGamemodeConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresenceConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBanner
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBannerConfiguration
 
 /**
  * Created by MrManHD
@@ -16,33 +20,40 @@ class DefaultConfig {
 
         fun get(): Config {
             return Config(
-                Settings(activeActionMenu = true, activePlayingGamemode = true, activeRichPresence = true),
-                getPlayingOnConfigurationList(),
-                getRichPresenceConfigurationList(),
-                getActionMenuConfigurationList()
+                PlayingGamemodeConfiguration(true, getPlayingGamemodeList()),
+                RichPresenceConfiguration(true, getRichPresenceList()),
+                ActionMenuConfiguration(true, getActionMenuList()),
+                ServerBannerConfiguration(true, getServerBannerList())
             )
         }
 
-        private fun getPlayingOnConfigurationList(): List<PlayingOnConfiguration> {
+        private fun getPlayingGamemodeList(): List<PlayingGamemode> {
             return listOf(
-                PlayingOnConfiguration("BW-2x1", null, "BedWars-%NUMBER% §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"),
-                PlayingOnConfiguration("BW-2x2", "cloud.laby.bedwars", "BedWars 2x2")
+                PlayingGamemode("BW-2x1", null, "BedWars-%NUMBER% §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"),
+                PlayingGamemode("BW-2x2", "cloud.laby.bedwars", "BedWars 2x2")
             )
         }
 
-        private fun getRichPresenceConfigurationList(): List<RichPresenceConfiguration> {
+        private fun getRichPresenceList(): List<RichPresence> {
             return listOf(
-                RichPresenceConfiguration("Lobby", null, "Lobby-%NUMBER% (%MOTD%)"),
-                RichPresenceConfiguration("SW-2x1", "cloud.laby.skywars", "SkyWars [%STATE%] §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)")
+                RichPresence("Lobby", null, "Lobby-%NUMBER% (%MOTD%)"),
+                RichPresence("SW-2x1", "cloud.laby.skywars", "SkyWars [%STATE%] §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)")
             )
         }
 
-        private fun getActionMenuConfigurationList(): List<ActionMenuConfiguration> {
+        private fun getActionMenuList(): List<ActionMenu> {
             return listOf(
-                ActionMenuConfiguration("Kick player", null, "cloud.laby.kick", "RUN_COMMAND", "kick {name}"),
-                ActionMenuConfiguration("Open shop", "Lobby", null, "OPEN_BROWSER", "https://shop.labymod.net"),
-                ActionMenuConfiguration("Copy playername", "Lobby", null, "CLIPBOARD", "{name}"),
-                ActionMenuConfiguration("Report player", null, null, "SUGGEST_COMMAND", "report {name}")
+                ActionMenu("Kick player", null, "cloud.laby.kick", "RUN_COMMAND", "kick {name}"),
+                ActionMenu("Open shop", "Lobby", null, "OPEN_BROWSER", "https://shop.labymod.net"),
+                ActionMenu("Copy playername", "Lobby", null, "CLIPBOARD", "{name}"),
+                ActionMenu("Report player", null, null, "SUGGEST_COMMAND", "report {name}")
+            )
+        }
+
+        private fun getServerBannerList(): List<ServerBanner> {
+            return listOf(
+                ServerBanner("all", ""),
+                ServerBanner("Lobby", "")
             )
         }
 

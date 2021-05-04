@@ -4,7 +4,7 @@ import eu.thesimplecloud.api.player.ICloudPlayer
 import net.labymod.serverapi.api.LabyAPI
 import net.mrmanhd.simplecloud.module.labymod.LabyModule
 import net.mrmanhd.simplecloud.module.labymod.config.Config
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.RichPresenceConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresence
 import org.bukkit.entity.Player
 
 /**
@@ -15,9 +15,8 @@ import org.bukkit.entity.Player
 class RichPresenceHandler {
 
     fun handleRichPresence(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
-        val richPresenceConfiguration = getRichPresenceConfiguration(config, cloudPlayer)
 
-        richPresenceConfiguration?.let {
+        getRichPresence(config, cloudPlayer)?.let {
             if (it.permission != null && !player.hasPermission(it.permission)) {
                 return
             }
@@ -29,8 +28,8 @@ class RichPresenceHandler {
         }
     }
 
-    private fun getRichPresenceConfiguration(config: Config, cloudPlayer: ICloudPlayer): RichPresenceConfiguration? {
-        return config.richPresenceConfigurationList
+    private fun getRichPresence(config: Config, cloudPlayer: ICloudPlayer): RichPresence? {
+        return config.richPresenceConfiguration.richPresenceList
             .firstOrNull { it.serverGroup == cloudPlayer.getConnectedServer()!!.getGroupName() }
     }
 

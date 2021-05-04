@@ -5,7 +5,6 @@ import eu.thesimplecloud.plugin.extension.getCloudPlayer
 import net.labymod.serverapi.bukkit.event.BukkitLabyModPlayerLoginEvent
 import net.mrmanhd.simplecloud.module.labymod.LabyModule
 import net.mrmanhd.simplecloud.module.labymod.config.Config
-import net.mrmanhd.simplecloud.module.labymod.config.Settings
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -30,18 +29,21 @@ class BukkitLabyModPlayerLoginListener : Listener {
     }
 
     private fun handle(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
-        val settings = config.settings
 
-        if (settings.activePlayingGamemode) {
+        if (config.playingGamemodeConfiguration.activate) {
             LabyModule.instance.playingGamemodeHandler.handlePlayingGamemode(config, cloudPlayer, player)
         }
 
-        if (settings.activeActionMenu) {
+        if (config.actionMenuConfiguration.activate) {
             LabyModule.instance.actionMenuHandler.handleActionMenu(config, cloudPlayer, player)
         }
 
-        if (settings.activeRichPresence) {
+        if (config.richPresenceConfiguration.activate) {
             LabyModule.instance.richPresenceHandler.handleRichPresence(config, cloudPlayer, player)
+        }
+
+        if (config.serverBannerConfiguration.activate) {
+            LabyModule.instance.serverBannerHandler.handleServerBanner(config, cloudPlayer, player)
         }
     }
 

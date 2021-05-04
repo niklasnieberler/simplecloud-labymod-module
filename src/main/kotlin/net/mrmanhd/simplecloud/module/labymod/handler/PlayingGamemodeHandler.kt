@@ -4,7 +4,7 @@ import eu.thesimplecloud.api.player.ICloudPlayer
 import net.labymod.serverapi.api.LabyAPI
 import net.mrmanhd.simplecloud.module.labymod.LabyModule
 import net.mrmanhd.simplecloud.module.labymod.config.Config
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.PlayingOnConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemode.PlayingGamemode
 import org.bukkit.entity.Player
 
 /**
@@ -15,9 +15,8 @@ import org.bukkit.entity.Player
 class PlayingGamemodeHandler {
 
     fun handlePlayingGamemode(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
-        val playingOnConfiguration = getPlayingOnConfiguration(config, cloudPlayer)
 
-        playingOnConfiguration?.let {
+        getPlayingGamemode(config, cloudPlayer)?.let {
             if (it.permission != null && !player.hasPermission(it.permission)) {
                 return
             }
@@ -29,8 +28,8 @@ class PlayingGamemodeHandler {
         }
     }
 
-    private fun getPlayingOnConfiguration(config: Config, cloudPlayer: ICloudPlayer): PlayingOnConfiguration? {
-        return config.playingOnConfigurationList
+    private fun getPlayingGamemode(config: Config, cloudPlayer: ICloudPlayer): PlayingGamemode? {
+        return config.playingGamemodeConfiguration.playingGamemodeList
             .firstOrNull { it.serverGroup == cloudPlayer.getConnectedServer()!!.getGroupName() }
     }
 

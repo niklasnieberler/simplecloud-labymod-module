@@ -4,9 +4,9 @@ import com.google.gson.JsonArray
 import eu.thesimplecloud.api.player.ICloudPlayer
 import net.labymod.serverapi.api.LabyAPI
 import net.labymod.serverapi.api.serverinteraction.actionmenu.ActionType
-import net.labymod.serverapi.api.serverinteraction.actionmenu.MenuEntry
 import net.mrmanhd.simplecloud.module.labymod.config.Config
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.ActionMenuConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenu
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenuConfiguration
 import org.bukkit.entity.Player
 
 /**
@@ -19,7 +19,7 @@ class ActionMenuHandler {
     fun handleActionMenu(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
         val entries = JsonArray()
 
-        getActionMenuConfigurationList(config, cloudPlayer)
+        getActionMenuList(config, cloudPlayer)
             .filter { !(it.permission != null && !player.hasPermission(it.permission)) }
             .forEach {
 
@@ -32,8 +32,8 @@ class ActionMenuHandler {
 
     }
 
-    private fun getActionMenuConfigurationList(config: Config, cloudPlayer: ICloudPlayer): List<ActionMenuConfiguration> {
-        return config.actionMenuConfigurationList
+    private fun getActionMenuList(config: Config, cloudPlayer: ICloudPlayer): List<ActionMenu> {
+        return config.actionMenuConfiguration.actionMenuList
             .filter { !(it.serverGroup != null && it.serverGroup != cloudPlayer.getConnectedServer()!!.getGroupName()) }
     }
 

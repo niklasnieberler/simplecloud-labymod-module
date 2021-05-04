@@ -1,8 +1,9 @@
 package net.mrmanhd.simplecloud.module.labymod.config
 
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.ActionMenuConfiguration
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.PlayingOnConfiguration
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.RichPresenceConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenuConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemode.PlayingGamemodeConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresenceConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBannerConfiguration
 
 /**
  * Created by MrManHD
@@ -10,8 +11,8 @@ import net.mrmanhd.simplecloud.module.labymod.config.configuration.RichPresenceC
  */
 
 class Config(
-    val settings: Settings,
-    val playingOnConfigurationList: List<PlayingOnConfiguration>,
-    val richPresenceConfigurationList: List<RichPresenceConfiguration>,
-    val actionMenuConfigurationList: List<ActionMenuConfiguration>
+    val playingGamemodeConfiguration: PlayingGamemodeConfiguration,
+    val richPresenceConfiguration: RichPresenceConfiguration,
+    val actionMenuConfiguration: ActionMenuConfiguration,
+    val serverBannerConfiguration: ServerBannerConfiguration
 )

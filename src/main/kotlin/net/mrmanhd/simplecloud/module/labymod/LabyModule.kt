@@ -5,6 +5,7 @@ import net.mrmanhd.simplecloud.module.labymod.config.ConfigLoader
 import net.mrmanhd.simplecloud.module.labymod.handler.ActionMenuHandler
 import net.mrmanhd.simplecloud.module.labymod.handler.PlayingGamemodeHandler
 import net.mrmanhd.simplecloud.module.labymod.handler.RichPresenceHandler
+import net.mrmanhd.simplecloud.module.labymod.handler.ServerBannerHandler
 
 /**
  * Created by MrManHD
@@ -17,6 +18,7 @@ class LabyModule {
     val playingGamemodeHandler = PlayingGamemodeHandler()
     val richPresenceHandler = RichPresenceHandler()
     val actionMenuHandler = ActionMenuHandler()
+    val serverBannerHandler = ServerBannerHandler()
 
     init {
         instance = this
