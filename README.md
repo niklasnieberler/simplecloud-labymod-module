@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a>
     <img src="https://mrmanhd.tryhub.de/img/github-logo.png" alt="Logo" width="80" height="80">
   </a>
 
