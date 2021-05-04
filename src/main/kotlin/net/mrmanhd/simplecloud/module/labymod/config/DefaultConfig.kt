@@ -39,10 +39,10 @@ class DefaultConfig {
 
         private fun getActionMenuConfigurationList(): List<ActionMenuConfiguration> {
             return listOf(
-                ActionMenuConfiguration("Kick player", null, "cloud.laby.kick", "RUN_COMMAND", "kick {player}"),
+                ActionMenuConfiguration("Kick player", null, "cloud.laby.kick", "RUN_COMMAND", "kick {name}"),
                 ActionMenuConfiguration("Open shop", "Lobby", null, "OPEN_BROWSER", "https://shop.labymod.net"),
-                ActionMenuConfiguration("Copy playername", "Lobby", null, "CLIPBOARD", "{player}"),
-                ActionMenuConfiguration("Report player", null, null, "SUGGEST_COMMAND", "report {player}")
+                ActionMenuConfiguration("Copy playername", "Lobby", null, "CLIPBOARD", "{name}"),
+                ActionMenuConfiguration("Report player", null, null, "SUGGEST_COMMAND", "report {name}")
             )
         }
 
