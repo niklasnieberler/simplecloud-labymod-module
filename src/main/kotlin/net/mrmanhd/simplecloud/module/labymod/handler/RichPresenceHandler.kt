@@ -17,7 +17,7 @@ class RichPresenceHandler {
     fun handleRichPresence(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
 
         getRichPresence(config, cloudPlayer)?.let {
-            if (it.permission != null && !player.hasPermission(it.permission)) {
+            if (it.permission != "ALL_PLAYERS" && !player.hasPermission(it.permission)) {
                 return
             }
 

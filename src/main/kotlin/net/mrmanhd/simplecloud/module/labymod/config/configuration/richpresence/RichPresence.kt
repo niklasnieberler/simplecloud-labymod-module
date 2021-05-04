@@ -7,6 +7,6 @@ package net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence
 
 class RichPresence(
     val serverGroup: String,
-    val permission: String?,
+    val permission: String,
     val message: String
 )

@@ -20,7 +20,7 @@ class ActionMenuHandler {
         val entries = JsonArray()
 
         getActionMenuList(config, cloudPlayer)
-            .filter { !(it.permission != null && !player.hasPermission(it.permission)) }
+            .filter { !(it.permission != "ALL_PLAYERS" && !player.hasPermission(it.permission)) }
             .forEach {
 
             val menuEntry = LabyAPI.getService().menuEntryFactory.create(it.displayName, it.value, ActionType.valueOf(it.type))
@@ -34,7 +34,7 @@ class ActionMenuHandler {
 
     private fun getActionMenuList(config: Config, cloudPlayer: ICloudPlayer): List<ActionMenu> {
         return config.actionMenuConfiguration.actionMenuList
-            .filter { !(it.serverGroup != null && it.serverGroup != cloudPlayer.getConnectedServer()!!.getGroupName()) }
+            .filter { !(it.serverGroup != "ALL_SERVERS" && it.serverGroup != cloudPlayer.getConnectedServer()!!.getGroupName()) }
     }
 
     private fun sendActionMenu(player: Player, entries: JsonArray) {

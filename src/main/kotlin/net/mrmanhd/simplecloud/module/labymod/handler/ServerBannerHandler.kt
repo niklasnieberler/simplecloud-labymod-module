@@ -29,12 +29,12 @@ class ServerBannerHandler {
     }
 
     private fun getServerBanner(config: Config, cloudPlayer: ICloudPlayer): ServerBanner? {
-        return config.serverBannerConfiguration.tablistList
+        return config.serverBannerConfiguration.serverBannerList
             .firstOrNull { it.serverGroup == cloudPlayer.getConnectedServer()!!.getGroupName() }
     }
 
     private fun getMainServerBanner(config: Config): ServerBanner? {
-        return config.serverBannerConfiguration.tablistList.firstOrNull { it.serverGroup == "all" }
+        return config.serverBannerConfiguration.serverBannerList.firstOrNull { it.serverGroup == "ALL_SERVERS" }
     }
 
     private fun sendServerBanner(player: Player, url: String) {

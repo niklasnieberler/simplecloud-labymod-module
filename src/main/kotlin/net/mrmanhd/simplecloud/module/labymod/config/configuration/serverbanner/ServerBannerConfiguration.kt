@@ -7,5 +7,5 @@ package net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner
 
 class ServerBannerConfiguration(
     val activate: Boolean,
-    val tablistList: List<ServerBanner>
+    val serverBannerList: List<ServerBanner>
 )

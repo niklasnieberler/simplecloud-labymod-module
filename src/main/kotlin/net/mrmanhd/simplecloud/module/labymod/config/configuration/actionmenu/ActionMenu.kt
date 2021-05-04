@@ -7,8 +7,8 @@ package net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu
 
 class ActionMenu(
     val displayName: String,
-    val serverGroup: String?,
-    val permission: String?,
+    val serverGroup: String,
+    val permission: String,
     val type: String,
     val value: String
 )
