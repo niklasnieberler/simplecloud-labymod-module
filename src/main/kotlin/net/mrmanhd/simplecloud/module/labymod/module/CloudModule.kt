@@ -13,7 +13,7 @@ class CloudModule : ICloudModule {
     override fun isReloadable(): Boolean = true
 
     override fun onEnable() {
-        val labyModule = LabyModule(this)
+        val labyModule = LabyModule()
         labyModule.configLoader.loadConfig()
 
     }

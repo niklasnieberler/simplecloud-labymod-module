@@ -1,5 +1,6 @@
 package net.mrmanhd.simplecloud.module.labymod.config
 
+import eu.thesimplecloud.api.CloudAPI
 import eu.thesimplecloud.jsonlib.JsonLib
 import java.io.File
 
@@ -11,7 +12,7 @@ import java.io.File
 class ConfigLoader {
 
     private val configFile = File("modules/labymodule", "config.json")
-    lateinit var config: Config
+    private lateinit var config: Config
 
     fun loadConfig() {
         if (!configFile.exists()) {
@@ -22,10 +23,17 @@ class ConfigLoader {
 
         val config = JsonLib.fromJsonFile(configFile)!!.getObject(Config::class.java)
         this.config = config
+
+        CloudAPI.instance.getGlobalPropertyHolder().setProperty("laby-config", config)
     }
 
     private fun saveConfig(config: Config) {
         JsonLib.fromObject(config).saveAsFile(configFile)
+    }
+
+    fun getConfig(): Config {
+        val property = CloudAPI.instance.getGlobalPropertyHolder().requestProperty<Config>("laby-config").getBlocking()
+        return property.getValue()
     }
 
 }

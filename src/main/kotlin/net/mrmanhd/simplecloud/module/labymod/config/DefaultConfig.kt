@@ -10,11 +10,13 @@ class DefaultConfig {
     companion object {
 
         fun get(): Config {
-            return Config(
-                listOf(
-                    PlayingOnConfiguration("BW-2x1", null, "BedWars 2x1"),
-                    PlayingOnConfiguration("BW-2x2", "cloud.laby.bedwars", "BedWars 2x2")
-                )
+            return Config(getPlayingOnConfigurationList())
+        }
+
+        private fun getPlayingOnConfigurationList(): List<PlayingOnConfiguration> {
+            return listOf(
+                PlayingOnConfiguration("BW-2x1", null, "BedWars 2x1"),
+                PlayingOnConfiguration("BW-2x2", "cloud.laby.bedwars", "BedWars 2x2")
             )
         }
 

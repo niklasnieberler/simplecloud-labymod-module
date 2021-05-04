@@ -13,6 +13,12 @@ repositories {
     maven { url 'https://repo.thesimplecloud.eu/artifactory/list/gradle-release-local/' }
     maven { url 'https://repo.thesimplecloud.eu/artifactory/list/gradle-dev-local/' }
 
+    //spigot repositories
+    maven {
+        name 'spigotmc-repo'
+        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+
 }
 
 dependencies {
@@ -24,6 +30,12 @@ dependencies {
     compileOnly 'eu.thesimplecloud.simplecloud:simplecloud-api:2.1.0'
     compileOnly 'eu.thesimplecloud.simplecloud:simplecloud-plugin:2.1.0'
     compileOnly 'eu.thesimplecloud.simplecloud:simplecloud-launcher:2.1.0'
+
+    //spigot dependencies
+    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+
+    //default libs
+    compileOnly(files("/libs/labyapi.jar"))
 
 }
 

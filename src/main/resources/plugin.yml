@@ -1,0 +1,7 @@
+name: labymod-module
+author: MrManHD
+version: 1.0.1
+depend: [SimpleCloud-Plugin]
+softdepend: [LabyApi]
+
+main: net.mrmanhd.simplecloud.module.labymod.spigot.SpigotPlugin
