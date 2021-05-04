@@ -2,11 +2,11 @@ package net.mrmanhd.simplecloud.module.labymod.spigot.listener
 
 import eu.thesimplecloud.api.player.ICloudPlayer
 import eu.thesimplecloud.plugin.extension.getCloudPlayer
-import net.labymod.serverapi.api.LabyAPI
 import net.labymod.serverapi.bukkit.event.BukkitLabyModPlayerLoginEvent
 import net.mrmanhd.simplecloud.module.labymod.LabyModule
 import net.mrmanhd.simplecloud.module.labymod.config.Config
-import net.mrmanhd.simplecloud.module.labymod.config.PlayingOnConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.Settings
+import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 
@@ -20,25 +20,30 @@ class BukkitLabyModPlayerLoginListener : Listener {
     @EventHandler
     fun handleBukkitLabyModPlayerLogin(event: BukkitLabyModPlayerLoginEvent) {
         val config = LabyModule.instance.configLoader.getConfig()
+
         val player = event.player
-
         val cloudPlayer = player.getCloudPlayer()
-        val playingOnConfiguration = getPlayingOnConfiguration(config, cloudPlayer)
 
-        playingOnConfiguration?.let {
-            if (it.permission != null && !player.hasPermission(it.permission)) {
-                return
-            }
 
-            LabyAPI.getService().playingGameModeTransmitter.transmit(player.uniqueId, it.message)
+        handle(config, cloudPlayer, player)
+
+    }
+
+    private fun handle(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
+        val settings = config.settings
+
+        if (settings.activePlayingGamemode) {
+            LabyModule.instance.playingGamemodeHandler.handlePlayingGamemode(config, cloudPlayer, player)
         }
 
+        if (settings.activeActionMenu) {
+            LabyModule.instance.actionMenuHandler.handleActionMenu(config, cloudPlayer, player)
+        }
 
+        if (settings.activeRichPresence) {
+            LabyModule.instance.richPresenceHandler.handleRichPresence(config, cloudPlayer, player)
+        }
     }
 
-    private fun getPlayingOnConfiguration(config: Config, cloudPlayer: ICloudPlayer): PlayingOnConfiguration? {
-        return config.playingOnConfigurationList
-            .firstOrNull { it.serverGroup == cloudPlayer.getConnectedServer()!!.getGroupName() }
-    }
 
 }

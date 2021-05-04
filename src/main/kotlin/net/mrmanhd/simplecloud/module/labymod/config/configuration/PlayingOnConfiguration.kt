@@ -1,4 +1,4 @@
-package net.mrmanhd.simplecloud.module.labymod.config
+package net.mrmanhd.simplecloud.module.labymod.config.configuration
 
 /**
  * Created by MrManHD
