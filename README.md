@@ -39,7 +39,7 @@
     "playingGamemodeList": [
       {
         "serverGroup": "BW-2x1",
-        "permission": null,
+        "permission": "ALL_PLAYERS",
         "message": "BedWars-%NUMBER% §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"
       },
       {
@@ -54,7 +54,7 @@
     "richPresenceList": [
       {
         "serverGroup": "Lobby",
-        "permission": null,
+        "permission": "ALL_PLAYERS",
         "message": "Lobby-%NUMBER% (%MOTD%)"
       },
       {
@@ -69,7 +69,7 @@
     "actionMenuList": [
       {
         "displayName": "Kick player",
-        "serverGroup": null,
+        "serverGroup": "ALL_SERVERS",
         "permission": "cloud.laby.kick",
         "type": "RUN_COMMAND",
         "value": "kick {name}"
@@ -77,21 +77,21 @@
       {
         "displayName": "Open shop",
         "serverGroup": "Lobby",
-        "permission": null,
+        "permission": "ALL_PLAYERS",
         "type": "OPEN_BROWSER",
         "value": "https://shop.labymod.net"
       },
       {
         "displayName": "Copy playername",
         "serverGroup": "Lobby",
-        "permission": null,
+        "permission": "ALL_PLAYERS",
         "type": "CLIPBOARD",
         "value": "{name}"
       },
       {
         "displayName": "Report player",
-        "serverGroup": null,
-        "permission": null,
+        "serverGroup": "ALL_SERVERS",
+        "permission": "ALL_PLAYERS",
         "type": "SUGGEST_COMMAND",
         "value": "report {name}"
       }
@@ -99,9 +99,9 @@
   },
   "serverBannerConfiguration": {
     "activate": true,
-    "tablistList": [
+    "serverBannerList": [
       {
-        "serverGroup": "all",
+        "serverGroup": "ALL_SERVERS",
         "url": ""
       },
       {
