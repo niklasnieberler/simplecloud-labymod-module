@@ -1,7 +1,9 @@
-package net.mrmanhd.simplecloud.module.labymod.module
+package net.mrmanhd.simplecloud.module.labymod.cloud
 
 import eu.thesimplecloud.api.external.ICloudModule
+import eu.thesimplecloud.launcher.startup.Launcher
 import net.mrmanhd.simplecloud.module.labymod.LabyModule
+import net.mrmanhd.simplecloud.module.labymod.cloud.commands.ReloadCommand
 
 /**
  * Created by MrManHD
@@ -16,10 +18,17 @@ class CloudModule : ICloudModule {
         val labyModule = LabyModule()
         labyModule.configLoader.loadConfig()
 
+        registerCommands()
+
     }
 
     override fun onDisable() {
 
+    }
+
+    private fun registerCommands() {
+        val commandManager = Launcher.instance.commandManager
+        commandManager.registerCommand(this, ReloadCommand())
     }
 
 }

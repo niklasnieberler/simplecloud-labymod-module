@@ -1,8 +1,8 @@
 {
   "name": "labymod-module",
   "author": "MrManHD",
-  "mainClass": "net.mrmanhd.simplecloud.module.labymod.module.CloudModule",
-  "moduleCopyType": "ALL",
+  "mainClass": "net.mrmanhd.simplecloud.module.labymod.cloud.CloudModule",
+  "moduleCopyType": "SERVER",
   "repositories": [],
   "dependencies": [],
   "depend": [],
