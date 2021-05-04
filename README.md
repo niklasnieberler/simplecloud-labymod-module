@@ -34,65 +34,82 @@
 
 ```json
 {
-  "settings": {
-    "activeActionMenu": true,
-    "activePlayingGamemode": true,
-    "activeRichPresence": true
+  "playingGamemodeConfiguration": {
+    "activate": true,
+    "playingGamemodeList": [
+      {
+        "serverGroup": "BW-2x1",
+        "permission": null,
+        "message": "BedWars-%NUMBER% §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"
+      },
+      {
+        "serverGroup": "BW-2x2",
+        "permission": "cloud.laby.bedwars",
+        "message": "BedWars 2x2"
+      }
+    ]
   },
-  "playingOnConfigurationList": [
-    {
-      "serverGroup": "BW-2x1",
-      "permission": null,
-      "message": "BedWars-%NUMBER% §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"
-    },
-    {
-      "serverGroup": "BW-2x2",
-      "permission": "cloud.laby.bedwars",
-      "message": "BedWars 2x2"
-    }
-  ],
-  "richPresenceConfigurationList": [
-    {
-      "serverGroup": "Lobby",
-      "permission": null,
-      "message": "Lobby-%NUMBER% (%MOTD%)"
-    },
-    {
-      "serverGroup": "SW-2x1",
-      "permission": "cloud.laby.skywars",
-      "message": "SkyWars [%STATE%] §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"
-    }
-  ],
-  "actionMenuConfigurationList": [
-    {
-      "displayName": "Kick player",
-      "serverGroup": null,
-      "permission": "cloud.laby.kick",
-      "type": "RUN_COMMAND",
-      "value": "kick {name}"
-    },
-    {
-      "displayName": "Open shop",
-      "serverGroup": "Lobby",
-      "permission": null,
-      "type": "OPEN_BROWSER",
-      "value": "https://shop.labymod.net"
-    },
-    {
-      "displayName": "Copy playername",
-      "serverGroup": "Lobby",
-      "permission": null,
-      "type": "CLIPBOARD",
-      "value": "{name}"
-    },
-    {
-      "displayName": "Report player",
-      "serverGroup": null,
-      "permission": null,
-      "type": "SUGGEST_COMMAND",
-      "value": "report {name}"
-    }
-  ]
+  "richPresenceConfiguration": {
+    "activate": true,
+    "richPresenceList": [
+      {
+        "serverGroup": "Lobby",
+        "permission": null,
+        "message": "Lobby-%NUMBER% (%MOTD%)"
+      },
+      {
+        "serverGroup": "SW-2x1",
+        "permission": "cloud.laby.skywars",
+        "message": "SkyWars [%STATE%] §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"
+      }
+    ]
+  },
+  "actionMenuConfiguration": {
+    "activate": true,
+    "actionMenuList": [
+      {
+        "displayName": "Kick player",
+        "serverGroup": null,
+        "permission": "cloud.laby.kick",
+        "type": "RUN_COMMAND",
+        "value": "kick {name}"
+      },
+      {
+        "displayName": "Open shop",
+        "serverGroup": "Lobby",
+        "permission": null,
+        "type": "OPEN_BROWSER",
+        "value": "https://shop.labymod.net"
+      },
+      {
+        "displayName": "Copy playername",
+        "serverGroup": "Lobby",
+        "permission": null,
+        "type": "CLIPBOARD",
+        "value": "{name}"
+      },
+      {
+        "displayName": "Report player",
+        "serverGroup": null,
+        "permission": null,
+        "type": "SUGGEST_COMMAND",
+        "value": "report {name}"
+      }
+    ]
+  },
+  "serverBannerConfiguration": {
+    "activate": true,
+    "tablistList": [
+      {
+        "serverGroup": "all",
+        "url": ""
+      },
+      {
+        "serverGroup": "Lobby",
+        "url": ""
+      }
+    ]
+  }
 }
 ```
 
