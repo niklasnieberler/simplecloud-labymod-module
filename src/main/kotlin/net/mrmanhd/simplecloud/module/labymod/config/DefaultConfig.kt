@@ -42,7 +42,7 @@ class DefaultConfig {
                 ActionMenuConfiguration("Kick player", null, "cloud.laby.kick", "RUN_COMMAND", "kick {player}"),
                 ActionMenuConfiguration("Open shop", "Lobby", null, "OPEN_BROWSER", "https://shop.labymod.net"),
                 ActionMenuConfiguration("Copy playername", "Lobby", null, "CLIPBOARD", "{player}"),
-                ActionMenuConfiguration("Report player", null, null, "SUGGEST_COMMAND", "report {player} >reason<")
+                ActionMenuConfiguration("Report player", null, null, "SUGGEST_COMMAND", "report {player}")
             )
         }
 
