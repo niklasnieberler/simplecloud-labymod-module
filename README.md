@@ -252,6 +252,11 @@ Spielername:
 Hier ist die Liste aller verfügbaren Addons: [addons.json](https://dl.labymod.net/addons.json)
 
  <br />
+ 
+## Cinescopes
+Die Cinescope höhe geht nur von 0% bis 50%!
+
+ <br />
     
 ## Kontakt
 
