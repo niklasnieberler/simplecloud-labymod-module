@@ -61,6 +61,10 @@ class BukkitLabyModPlayerLoginListener : Listener {
         if (config.cinescopesConfiguration.activate) {
             LabyModule.instance.cinescopesHandler.handleCinescopes(config, cloudPlayer, player)
         }
+
+        if (config.serverSwitchConfiguration.activate) {
+            LabyModule.instance.serverSwitchHandler.handleServerSwitch(config, cloudPlayer, player)
+        }
     }
 
 

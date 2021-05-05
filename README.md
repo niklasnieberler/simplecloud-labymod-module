@@ -178,8 +178,27 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
       {
         "serverGroup": "Lobby",
         "permission": "ALL_PLAYERS",
-        "coverage": 50,
+        "coverage": 0,
         "duration": 100
+      }
+    ]
+  },
+  "serverSwitchConfiguration": {
+    "activate": true,
+    "serverSwitchList": [
+      {
+        "serverGroup": "ALL_SERVERS",
+        "permission": "cloud.laby.serverswitch",
+        "address": "127.0.0.1",
+        "title": "Cooler Server",
+        "preview": false
+      },
+      {
+        "serverGroup": "Lobby",
+        "permission": "ALL_PLAYERS",
+        "address": "TrayMC.net",
+        "title": ":)",
+        "preview": true
       }
     ]
   }

@@ -6,6 +6,7 @@ import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemo
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.recommendation.RecommendationConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresenceConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBannerConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverswitch.ServerSwitchConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.subtitle.SubtitleConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.voicechat.VoiceChatConfiguration
 
@@ -22,5 +23,6 @@ class Config(
     val subtitleConfiguration: SubtitleConfiguration,
     val voiceChatConfiguration: VoiceChatConfiguration,
     val recommendationConfiguration: RecommendationConfiguration,
-    val cinescopesConfiguration: CinescopesConfiguration
+    val cinescopesConfiguration: CinescopesConfiguration,
+    val serverSwitchConfiguration: ServerSwitchConfiguration
 )

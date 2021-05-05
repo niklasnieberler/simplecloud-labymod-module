@@ -12,6 +12,8 @@ import net.mrmanhd.simplecloud.module.labymod.config.configuration.recommendatio
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresenceConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBanner
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBannerConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverswitch.ServerSwitch
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverswitch.ServerSwitchConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.subtitle.Subtitle
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.subtitle.SubtitleConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.voicechat.VoiceChat
@@ -35,7 +37,8 @@ class DefaultConfig {
                 SubtitleConfiguration(true, getSubtitleList()),
                 VoiceChatConfiguration(true, getVoiceChatList()),
                 RecommendationConfiguration(true, getRecommendationList()),
-                CinescopesConfiguration(true, getCinescopesList())
+                CinescopesConfiguration(true, getCinescopesList()),
+                ServerSwitchConfiguration(true, getServerSwitchList())
             )
         }
 
@@ -94,6 +97,13 @@ class DefaultConfig {
             return listOf(
                 Cinescopes("ALL_SERVERS", "cloud.laby.cinescops", 0, 20),
                 Cinescopes("Lobby", "ALL_PLAYERS", 50,100)
+            )
+        }
+
+        private fun getServerSwitchList(): List<ServerSwitch> {
+            return listOf(
+                ServerSwitch("ALL_SERVERS", "cloud.laby.serverswitch", "127.0.0.1", "Cooler Server", false),
+                ServerSwitch("Lobby", "ALL_PLAYERS", "TrayMC.net", ":)", true)
             )
         }
 
