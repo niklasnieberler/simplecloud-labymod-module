@@ -17,6 +17,11 @@
   </p>
 </p>
 
+<br />
+
+## Was kann dieses Module?
+Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Features von der [LabyModApi](https://github.com/LabyMod/labymod-server-api/) nutzen. <br/> Dafür brauchst du nicht mal Programmierkenntnisse.
+
  <br />
     
 ## Installation
