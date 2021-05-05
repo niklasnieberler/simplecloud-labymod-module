@@ -5,6 +5,8 @@ import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemo
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresence
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenu
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemode.PlayingGamemodeConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.recommendation.Recommendation
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.recommendation.RecommendationConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresenceConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBanner
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBannerConfiguration
@@ -29,7 +31,8 @@ class DefaultConfig {
                 ActionMenuConfiguration(true, getActionMenuList()),
                 ServerBannerConfiguration(true, getServerBannerList()),
                 SubtitleConfiguration(true, getSubtitleList()),
-                VoiceChatConfiguration(true, getVoiceChatList())
+                VoiceChatConfiguration(true, getVoiceChatList()),
+                RecommendationConfiguration(true, getRecommendationList())
             )
         }
 
@@ -74,6 +77,13 @@ class DefaultConfig {
             return listOf(
                 VoiceChat("ALL_SERVERS", "cloud.laby.voicechat", false),
                 VoiceChat("Lobby", "ALL_PLAYERS", true)
+            )
+        }
+
+        private fun getRecommendationList(): List<Recommendation> {
+            return listOf(
+                Recommendation("ALL_SERVERS", "cloud.laby.recommendation", "7d62bffd-fe3f-4667-8200-e8decb384fa0",false),
+                Recommendation("Lobby", "ALL_PLAYERS", "01687f50-baee-4af9-9123-9e1c680f2d9d",true)
             )
         }
 

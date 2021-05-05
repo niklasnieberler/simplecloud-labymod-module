@@ -146,6 +146,23 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
         "disableVoiceChat": true
       }
     ]
+  },
+  "recommendationConfiguration": {
+    "activate": true,
+    "recommendationList": [
+      {
+        "serverGroup": "ALL_SERVERS",
+        "permission": "cloud.laby.voicechat",
+        "addonUniqueId": "7d62bffd-fe3f-4667-8200-e8decb384fa0",
+        "required": false
+      },
+      {
+        "serverGroup": "Lobby",
+        "permission": "ALL_PLAYERS",
+        "addonUniqueId": "01687f50-baee-4af9-9123-9e1c680f2d9d",
+        "required": true
+      }
+    ]
   }
 }
 ```
@@ -203,6 +220,11 @@ Spielername:
  SUGGEST_COMMAND
  OPEN_BROWSER
 ```
+
+ <br />
+
+## Addon Recommendation
+Hier ist die Liste aller verfügbaren Addons: [addons.json](https://dl.labymod.net/addons.json)
 
  <br />
     

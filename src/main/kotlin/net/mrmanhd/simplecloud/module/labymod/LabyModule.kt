@@ -18,6 +18,7 @@ class LabyModule {
     val serverBannerHandler = ServerBannerHandler()
     val subtitleHandler = SubtitleHandler()
     val voiceChatHandler = VoiceChatHandler()
+    val recommendationHandler = RecommendationHandler()
 
     init {
         instance = this
