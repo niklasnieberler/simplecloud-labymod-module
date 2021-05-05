@@ -28,7 +28,7 @@
 
 4. Als letztes musst du das Module in das `modules` Verzeichnis hochladen.
 
- <br />
+<br />
     
 ## Config
 
@@ -115,11 +115,39 @@
 
  <br />
     
-## ActionMenu
+## Placeholder
 
- **{name}** wird durch den Spielernamen ersetzt.
+### RichPresence & PlayingGamode Placeholder
 
-### Action types
+```
+Serverstate:
+» %STATE%
+
+MOTD:
+» %MOTD%
+
+Servernumber:
+» %NUMBER%
+ 
+Online Spieler:
+» %ONLINE_PLAYERS%
+ 
+Maximale Spieler:
+» %MAX_PLAYERS%
+```
+
+<br />
+
+### ActionMenu Placeholder
+
+#### Placeholder
+
+```
+Spielername:
+» {name}
+```
+
+#### Action types
 
 ```
  NONE
@@ -128,35 +156,6 @@
  SUGGEST_COMMAND
  OPEN_BROWSER
 ```
-
- <br />
-    
-## Placeholder
-
-Serverstate:
-``
-%STATE%
-``
-
-MOTD:
-``
-%MOTD%
-``
-
-Servernumber:
-``
-%NUMBER%
-``
- 
-Online Spieler:
-``
-%ONLINE_PLAYERS%
-``
- 
-Maximale Spieler:
-``
-%MAX_PLAYERS%
-``
 
  <br />
     
