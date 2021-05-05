@@ -14,6 +14,8 @@
     <a href="https://github.com/MrManHD/simplecloud-labymod-module/issues">Report Bug</a>
     ·
     <a href="https://www.spigotmc.org/resources/simplecloud-simplify-your-network.79466/">SimpleCloud</a>
+    ·
+    <a href="https://docs.labymod.net/pages/server/introduction/">LabyMod Docs</a>
   </p>
 </p>
 
