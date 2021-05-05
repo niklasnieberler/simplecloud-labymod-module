@@ -43,9 +43,9 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
     "activate": true,
     "playingGamemodeList": [
       {
-        "serverGroup": "BW-2x1",
+        "serverGroup": "ALL_SERVERS",
         "permission": "ALL_PLAYERS",
-        "message": "BedWars-%NUMBER% §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"
+        "message": "%GROUP%-%NUMBER% §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"
       },
       {
         "serverGroup": "BW-2x2",
@@ -107,10 +107,12 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
     "serverBannerList": [
       {
         "serverGroup": "ALL_SERVERS",
+        "permission": "ALL_SERVERS",
         "url": "https://i.imgur.com/eTQJ1IX.png"
       },
       {
         "serverGroup": "Lobby",
+        "permission": "cloud.laby.serverbanner",
         "url": "https://i.imgur.com/eTQJ1IX.png"
       }
     ]
@@ -152,7 +154,7 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
     "recommendationList": [
       {
         "serverGroup": "ALL_SERVERS",
-        "permission": "cloud.laby.voicechat",
+        "permission": "cloud.laby.recommendation",
         "addonUniqueId": "7d62bffd-fe3f-4667-8200-e8decb384fa0",
         "required": false
       },
@@ -161,6 +163,23 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
         "permission": "ALL_PLAYERS",
         "addonUniqueId": "01687f50-baee-4af9-9123-9e1c680f2d9d",
         "required": true
+      }
+    ]
+  },
+  "cinescopesConfiguration": {
+    "activate": true,
+    "cinescopesList": [
+      {
+        "serverGroup": "ALL_SERVERS",
+        "permission": "cloud.laby.cinescops",
+        "coverage": 0,
+        "duration": 20
+      },
+      {
+        "serverGroup": "Lobby",
+        "permission": "ALL_PLAYERS",
+        "coverage": 50,
+        "duration": 100
       }
     ]
   }
@@ -189,6 +208,12 @@ Serverstate:
 
 MOTD:
 » %MOTD%
+
+Servergruppe:
+» %GROUP%
+
+Servername:
+» %NAME%
 
 Servernumber:
 » %NUMBER%

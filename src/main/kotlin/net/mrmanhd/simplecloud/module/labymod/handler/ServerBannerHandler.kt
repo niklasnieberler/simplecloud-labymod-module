@@ -18,14 +18,26 @@ class ServerBannerHandler {
     fun handleServerBanner(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
 
         getMainServerBanner(config)?.let {
-            sendServerBanner(player, it.url)
+            handlePlayerPermission(it, player)
             return
         }
 
         getServerBanner(config, cloudPlayer)?.let {
-            sendServerBanner(player, it.url)
+            handlePlayerPermission(it, player)
         }
 
+    }
+
+    private fun handlePlayerPermission(serverBanner: ServerBanner, player: Player) {
+        if (serverBanner.permission != "ALL_PLAYERS" && !player.hasPermission(serverBanner.permission)) {
+            return
+        }
+
+        val jsonObject = JsonObject()
+        jsonObject.addProperty("url", serverBanner.url)
+
+        val payloadCommunicator = LabyAPI.getService().payloadCommunicator
+        payloadCommunicator.sendLabyModMessage(player.uniqueId, "server_banner", jsonObject)
     }
 
     private fun getServerBanner(config: Config, cloudPlayer: ICloudPlayer): ServerBanner? {
@@ -35,14 +47,6 @@ class ServerBannerHandler {
 
     private fun getMainServerBanner(config: Config): ServerBanner? {
         return config.serverBannerConfiguration.serverBannerList.firstOrNull { it.serverGroup == "ALL_SERVERS" }
-    }
-
-    private fun sendServerBanner(player: Player, url: String) {
-        val jsonObject = JsonObject()
-        jsonObject.addProperty("url", url)
-
-        val payloadCommunicator = LabyAPI.getService().payloadCommunicator
-        payloadCommunicator.sendLabyModMessage(player.uniqueId, "server_banner", jsonObject)
     }
 
 }

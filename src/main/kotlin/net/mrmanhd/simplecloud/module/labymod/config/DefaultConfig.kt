@@ -4,6 +4,8 @@ import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.Ac
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemode.PlayingGamemode
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresence
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenu
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.cinescopes.Cinescopes
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.cinescopes.CinescopesConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemode.PlayingGamemodeConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.recommendation.Recommendation
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.recommendation.RecommendationConfiguration
@@ -32,13 +34,14 @@ class DefaultConfig {
                 ServerBannerConfiguration(true, getServerBannerList()),
                 SubtitleConfiguration(true, getSubtitleList()),
                 VoiceChatConfiguration(true, getVoiceChatList()),
-                RecommendationConfiguration(true, getRecommendationList())
+                RecommendationConfiguration(true, getRecommendationList()),
+                CinescopesConfiguration(true, getCinescopesList())
             )
         }
 
         private fun getPlayingGamemodeList(): List<PlayingGamemode> {
             return listOf(
-                PlayingGamemode("BW-2x1", "ALL_PLAYERS", "BedWars-%NUMBER% §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"),
+                PlayingGamemode("ALL_SERVERS", "ALL_PLAYERS", "%GROUP%-%NUMBER% §8(§e%ONLINE_PLAYERS%§8/§c%MAX_PLAYERS%§8)"),
                 PlayingGamemode("BW-2x2", "cloud.laby.bedwars", "BedWars 2x2")
             )
         }
@@ -61,8 +64,8 @@ class DefaultConfig {
 
         private fun getServerBannerList(): List<ServerBanner> {
             return listOf(
-                ServerBanner("ALL_SERVERS", "https://i.imgur.com/eTQJ1IX.png"),
-                ServerBanner("Lobby", "https://i.imgur.com/eTQJ1IX.png")
+                ServerBanner("ALL_SERVERS", "ALL_SERVERS","https://i.imgur.com/eTQJ1IX.png"),
+                ServerBanner("Lobby", "cloud.laby.serverbanner","https://i.imgur.com/eTQJ1IX.png")
             )
         }
 
@@ -84,6 +87,13 @@ class DefaultConfig {
             return listOf(
                 Recommendation("ALL_SERVERS", "cloud.laby.recommendation", "7d62bffd-fe3f-4667-8200-e8decb384fa0",false),
                 Recommendation("Lobby", "ALL_PLAYERS", "01687f50-baee-4af9-9123-9e1c680f2d9d",true)
+            )
+        }
+
+        private fun getCinescopesList(): List<Cinescopes> {
+            return listOf(
+                Cinescopes("ALL_SERVERS", "cloud.laby.cinescops", 0, 20),
+                Cinescopes("Lobby", "ALL_PLAYERS", 50,100)
             )
         }
 

@@ -1,6 +1,7 @@
 package net.mrmanhd.simplecloud.module.labymod.config
 
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenuConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.cinescopes.CinescopesConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemode.PlayingGamemodeConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.recommendation.RecommendationConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresenceConfiguration
@@ -20,5 +21,6 @@ class Config(
     val serverBannerConfiguration: ServerBannerConfiguration,
     val subtitleConfiguration: SubtitleConfiguration,
     val voiceChatConfiguration: VoiceChatConfiguration,
-    val recommendationConfiguration: RecommendationConfiguration
+    val recommendationConfiguration: RecommendationConfiguration,
+    val cinescopesConfiguration: CinescopesConfiguration
 )

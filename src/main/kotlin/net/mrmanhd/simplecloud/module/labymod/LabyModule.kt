@@ -19,6 +19,7 @@ class LabyModule {
     val subtitleHandler = SubtitleHandler()
     val voiceChatHandler = VoiceChatHandler()
     val recommendationHandler = RecommendationHandler()
+    val cinescopesHandler = CinescopesHandler()
 
     init {
         instance = this
@@ -30,6 +31,8 @@ class LabyModule {
 
     fun replaceString(message: String, cloudServer: ICloudService): String {
         return message
+            .replace("%GROUP%", cloudServer.getGroupName())
+            .replace("%NAME%", cloudServer.getName())
             .replace("%MOTD%", cloudServer.getMOTD())
             .replace("%NUMBER%", cloudServer.getServiceNumber().toString())
             .replace("%STATE%", cloudServer.getState().name)

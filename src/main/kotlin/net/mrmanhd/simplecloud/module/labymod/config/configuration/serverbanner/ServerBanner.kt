@@ -7,5 +7,6 @@ package net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner
 
 class ServerBanner(
     val serverGroup: String,
+    val permission: String,
     val url: String
 )
