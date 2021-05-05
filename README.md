@@ -261,7 +261,7 @@ Die Cinescope höhe geht nur von 0% bis 50%!
 ## Kontakt
 
 Twitter: [@MrManHD](https://twitter.com/MrManHD)
-
+<br />
 Discord: MrManHD | ƝƖƙƚƛƧ#5363
-
+<br />
 Discord-Server: [discord.TryHub.de](https://tryhub.de/discord)
