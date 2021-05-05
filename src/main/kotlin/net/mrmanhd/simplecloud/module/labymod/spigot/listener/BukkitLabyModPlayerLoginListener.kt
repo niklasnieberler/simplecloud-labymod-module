@@ -45,6 +45,10 @@ class BukkitLabyModPlayerLoginListener : Listener {
         if (config.serverBannerConfiguration.activate) {
             LabyModule.instance.serverBannerHandler.handleServerBanner(config, cloudPlayer, player)
         }
+
+        if (config.subtitleConfiguration.activate) {
+            LabyModule.instance.subtitleHandler.handleSubtitle(config, cloudPlayer, player)
+        }
     }
 
 

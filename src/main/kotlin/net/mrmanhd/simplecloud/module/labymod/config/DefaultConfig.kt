@@ -8,6 +8,8 @@ import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemo
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresenceConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBanner
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBannerConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.subtitle.Subtitle
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.subtitle.SubtitleConfiguration
 
 /**
  * Created by MrManHD
@@ -23,7 +25,8 @@ class DefaultConfig {
                 PlayingGamemodeConfiguration(true, getPlayingGamemodeList()),
                 RichPresenceConfiguration(true, getRichPresenceList()),
                 ActionMenuConfiguration(true, getActionMenuList()),
-                ServerBannerConfiguration(true, getServerBannerList())
+                ServerBannerConfiguration(true, getServerBannerList()),
+                SubtitleConfiguration(true, getSubtitleList())
             )
         }
 
@@ -52,8 +55,15 @@ class DefaultConfig {
 
         private fun getServerBannerList(): List<ServerBanner> {
             return listOf(
-                ServerBanner("ALL_SERVERS", ""),
-                ServerBanner("Lobby", "")
+                ServerBanner("ALL_SERVERS", "https://i.imgur.com/eTQJ1IX.png"),
+                ServerBanner("Lobby", "https://i.imgur.com/eTQJ1IX.png")
+            )
+        }
+
+        private fun getSubtitleList(): List<Subtitle> {
+            return listOf(
+                Subtitle("§cPizza","ALL_SERVERS", "cloud.laby.subtitle.pizza", 0.8),
+                Subtitle("§6Bohemian Rhapsody","Lobby", "ALL_PLAYERS", 1.6)
             )
         }
 

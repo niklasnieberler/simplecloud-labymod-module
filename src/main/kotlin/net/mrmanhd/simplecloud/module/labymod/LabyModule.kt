@@ -2,10 +2,7 @@ package net.mrmanhd.simplecloud.module.labymod
 
 import eu.thesimplecloud.api.service.ICloudService
 import net.mrmanhd.simplecloud.module.labymod.config.ConfigLoader
-import net.mrmanhd.simplecloud.module.labymod.handler.ActionMenuHandler
-import net.mrmanhd.simplecloud.module.labymod.handler.PlayingGamemodeHandler
-import net.mrmanhd.simplecloud.module.labymod.handler.RichPresenceHandler
-import net.mrmanhd.simplecloud.module.labymod.handler.ServerBannerHandler
+import net.mrmanhd.simplecloud.module.labymod.handler.*
 
 /**
  * Created by MrManHD
@@ -19,6 +16,7 @@ class LabyModule {
     val richPresenceHandler = RichPresenceHandler()
     val actionMenuHandler = ActionMenuHandler()
     val serverBannerHandler = ServerBannerHandler()
+    val subtitleHandler = SubtitleHandler()
 
     init {
         instance = this
