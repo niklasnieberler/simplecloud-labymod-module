@@ -122,6 +122,16 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
     
 ## Placeholder
 
+```
+An alle Spieler:
+» ALL_PLAYERS
+
+An alle Server:
+» ALL_SERVERS
+```
+
+<br />
+
 ### RichPresence & PlayingGamode Placeholder
 
 ```
