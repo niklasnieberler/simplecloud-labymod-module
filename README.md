@@ -17,6 +17,11 @@
   </p>
 </p>
 
+<br />
+
+## Was kann dieses Module?
+Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Features von der [LabyModApi](https://github.com/LabyMod/labymod-server-api/) nutzen. <br/> Dafür brauchst du nicht mal Programmierkenntnisse.
+
  <br />
     
 ## Installation
@@ -28,7 +33,7 @@
 
 4. Als letztes musst du das Module in das `modules` Verzeichnis hochladen.
 
- <br />
+<br />
     
 ## Config
 
@@ -97,16 +102,33 @@
       }
     ]
   },
-  "serverBannerConfiguration": {
+    "serverBannerConfiguration": {
     "activate": true,
     "serverBannerList": [
       {
         "serverGroup": "ALL_SERVERS",
-        "url": ""
+        "url": "https://i.imgur.com/eTQJ1IX.png"
       },
       {
         "serverGroup": "Lobby",
-        "url": ""
+        "url": "https://i.imgur.com/eTQJ1IX.png"
+      }
+    ]
+  },
+  "subtitleConfiguration": {
+    "activate": true,
+    "subtitleList": [
+      {
+        "displayName": "§cPizza",
+        "serverGroup": "ALL_SERVERS",
+        "permission": "cloud.laby.subtitle.pizza",
+        "size": 0.8
+      },
+      {
+        "displayName": "§6Bohemian Rhapsody",
+        "serverGroup": "Lobby",
+        "permission": "ALL_PLAYERS",
+        "size": 1.6
       }
     ]
   }
@@ -115,11 +137,49 @@
 
  <br />
     
-## ActionMenu
+## Placeholder
 
- **{name}** wird durch den Spielernamen ersetzt.
+```
+An alle Spieler:
+» ALL_PLAYERS
 
-### Action types
+An alle Server:
+» ALL_SERVERS
+```
+
+<br />
+
+### RichPresence & PlayingGamode Placeholder
+
+```
+Serverstate:
+» %STATE%
+
+MOTD:
+» %MOTD%
+
+Servernumber:
+» %NUMBER%
+ 
+Online Spieler:
+» %ONLINE_PLAYERS%
+ 
+Maximale Spieler:
+» %MAX_PLAYERS%
+```
+
+<br />
+
+### ActionMenu Placeholder
+
+#### Placeholder
+
+```
+Spielername:
+» {name}
+```
+
+#### Action types
 
 ```
  NONE
@@ -128,35 +188,6 @@
  SUGGEST_COMMAND
  OPEN_BROWSER
 ```
-
- <br />
-    
-## Placeholder
-
-Serverstate:
-``
-%STATE%
-``
-
-MOTD:
-``
-%MOTD%
-``
-
-Servernumber:
-``
-%NUMBER%
-``
- 
-Online Spieler:
-``
-%ONLINE_PLAYERS%
-``
- 
-Maximale Spieler:
-``
-%MAX_PLAYERS%
-``
 
  <br />
     
