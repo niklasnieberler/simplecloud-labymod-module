@@ -5,6 +5,7 @@ import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemo
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.richpresence.RichPresenceConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBannerConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.subtitle.SubtitleConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.voicechat.VoiceChatConfiguration
 
 /**
  * Created by MrManHD
@@ -16,5 +17,6 @@ class Config(
     val richPresenceConfiguration: RichPresenceConfiguration,
     val actionMenuConfiguration: ActionMenuConfiguration,
     val serverBannerConfiguration: ServerBannerConfiguration,
-    val subtitleConfiguration: SubtitleConfiguration
+    val subtitleConfiguration: SubtitleConfiguration,
+    val voiceChatConfiguration: VoiceChatConfiguration
 )

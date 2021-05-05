@@ -49,6 +49,10 @@ class BukkitLabyModPlayerLoginListener : Listener {
         if (config.subtitleConfiguration.activate) {
             LabyModule.instance.subtitleHandler.handleSubtitle(config, cloudPlayer, player)
         }
+
+        if (config.voiceChatConfiguration.activate) {
+            LabyModule.instance.subtitleHandler.handleSubtitle(config, cloudPlayer, player)
+        }
     }
 
 

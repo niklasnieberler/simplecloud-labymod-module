@@ -6,7 +6,6 @@ import net.labymod.serverapi.api.LabyAPI
 import net.labymod.serverapi.api.serverinteraction.actionmenu.ActionType
 import net.mrmanhd.simplecloud.module.labymod.config.Config
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenu
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.actionmenu.ActionMenuConfiguration
 import org.bukkit.entity.Player
 
 /**

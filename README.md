@@ -102,7 +102,7 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
       }
     ]
   },
-    "serverBannerConfiguration": {
+  "serverBannerConfiguration": {
     "activate": true,
     "serverBannerList": [
       {
@@ -129,6 +129,21 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
         "serverGroup": "Lobby",
         "permission": "ALL_PLAYERS",
         "size": 1.6
+      }
+    ]
+  },
+  "voiceChatConfiguration": {
+    "activate": true,
+    "voiceChatList": [
+      {
+        "serverGroup": "ALL_SERVERS",
+        "permission": "cloud.laby.voicechat",
+        "disableVoiceChat": false
+      },
+      {
+        "serverGroup": "Lobby",
+        "permission": "ALL_PLAYERS",
+        "disableVoiceChat": true
       }
     ]
   }

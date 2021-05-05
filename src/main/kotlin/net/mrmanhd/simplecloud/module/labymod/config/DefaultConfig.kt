@@ -10,6 +10,8 @@ import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBannerConfiguration
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.subtitle.Subtitle
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.subtitle.SubtitleConfiguration
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.voicechat.VoiceChat
+import net.mrmanhd.simplecloud.module.labymod.config.configuration.voicechat.VoiceChatConfiguration
 
 /**
  * Created by MrManHD
@@ -26,7 +28,8 @@ class DefaultConfig {
                 RichPresenceConfiguration(true, getRichPresenceList()),
                 ActionMenuConfiguration(true, getActionMenuList()),
                 ServerBannerConfiguration(true, getServerBannerList()),
-                SubtitleConfiguration(true, getSubtitleList())
+                SubtitleConfiguration(true, getSubtitleList()),
+                VoiceChatConfiguration(true, getVoiceChatList())
             )
         }
 
@@ -64,6 +67,13 @@ class DefaultConfig {
             return listOf(
                 Subtitle("§cPizza","ALL_SERVERS", "cloud.laby.subtitle.pizza", 0.8),
                 Subtitle("§6Bohemian Rhapsody","Lobby", "ALL_PLAYERS", 1.6)
+            )
+        }
+
+        private fun getVoiceChatList(): List<VoiceChat> {
+            return listOf(
+                VoiceChat("ALL_SERVERS", "cloud.laby.voicechat", false),
+                VoiceChat("Lobby", "ALL_PLAYERS", true)
             )
         }
 
