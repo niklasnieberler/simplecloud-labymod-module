@@ -102,16 +102,33 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
       }
     ]
   },
-  "serverBannerConfiguration": {
+    "serverBannerConfiguration": {
     "activate": true,
     "serverBannerList": [
       {
         "serverGroup": "ALL_SERVERS",
-        "url": ""
+        "url": "https://i.imgur.com/eTQJ1IX.png"
       },
       {
         "serverGroup": "Lobby",
-        "url": ""
+        "url": "https://i.imgur.com/eTQJ1IX.png"
+      }
+    ]
+  },
+  "subtitleConfiguration": {
+    "activate": true,
+    "subtitleList": [
+      {
+        "displayName": "§cPizza",
+        "serverGroup": "ALL_SERVERS",
+        "permission": "cloud.laby.subtitle.pizza",
+        "size": 0.8
+      },
+      {
+        "displayName": "§6Bohemian Rhapsody",
+        "serverGroup": "Lobby",
+        "permission": "ALL_PLAYERS",
+        "size": 1.6
       }
     ]
   }
