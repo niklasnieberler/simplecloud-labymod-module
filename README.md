@@ -180,7 +180,7 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
       {
         "serverGroup": "Lobby",
         "permission": "ALL_PLAYERS",
-        "coverage": 0,
+        "coverage": 50,
         "duration": 100
       }
     ]
