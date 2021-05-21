@@ -15,12 +15,12 @@ class SubtitleHandler {
 
     fun handleSubtitle(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
 
-        getMainSubtitle(config)?.let {
+        getSubtitle(config, cloudPlayer)?.let {
             handlePlayerPermission(it, player)
             return
         }
 
-        getSubtitle(config, cloudPlayer)?.let {
+        getMainSubtitle(config)?.let {
             handlePlayerPermission(it, player)
         }
 

@@ -4,7 +4,6 @@ import com.google.gson.JsonObject
 import eu.thesimplecloud.api.player.ICloudPlayer
 import net.labymod.serverapi.api.LabyAPI
 import net.mrmanhd.simplecloud.module.labymod.config.Config
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.subtitle.Subtitle
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.voicechat.VoiceChat
 import org.bukkit.entity.Player
 
@@ -17,12 +16,12 @@ class VoiceChatHandler {
 
     fun handleVoiceChat(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
 
-        getMainVoiceChat(config)?.let {
+        getVoiceChat(config, cloudPlayer)?.let {
             handlePlayerPermission(it, player)
             return
         }
 
-        getVoiceChat(config, cloudPlayer)?.let {
+        getMainVoiceChat(config)?.let {
             handlePlayerPermission(it, player)
         }
 

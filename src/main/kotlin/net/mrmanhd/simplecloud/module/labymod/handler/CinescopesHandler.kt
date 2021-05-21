@@ -17,12 +17,12 @@ class CinescopesHandler {
 
     fun handleCinescopes(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
 
-        getMainCinescopes(config)?.let {
+        getCinescopes(config, cloudPlayer)?.let {
             handlePlayerPermission(it, player)
             return
         }
 
-        getCinescopes(config, cloudPlayer)?.let {
+        getMainCinescopes(config)?.let {
             handlePlayerPermission(it, player)
         }
 

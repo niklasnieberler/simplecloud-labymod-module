@@ -15,12 +15,12 @@ class ServerSwitchHandler {
 
     fun handleServerSwitch(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
 
-        getMainServerSwitch(config)?.let {
+        getServerSwitch(config, cloudPlayer)?.let {
             handlePlayerPermission(it, player)
             return
         }
 
-        getServerSwitch(config, cloudPlayer)?.let {
+        getMainServerSwitch(config)?.let {
             handlePlayerPermission(it, player)
         }
 

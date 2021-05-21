@@ -67,7 +67,7 @@ class DefaultConfig {
 
         private fun getServerBannerList(): List<ServerBanner> {
             return listOf(
-                ServerBanner("ALL_SERVERS", "ALL_SERVERS","https://i.imgur.com/eTQJ1IX.png"),
+                ServerBanner("ALL_SERVERS", "ALL_PLAYERS","https://i.imgur.com/eTQJ1IX.png"),
                 ServerBanner("Lobby", "cloud.laby.serverbanner","https://i.imgur.com/eTQJ1IX.png")
             )
         }

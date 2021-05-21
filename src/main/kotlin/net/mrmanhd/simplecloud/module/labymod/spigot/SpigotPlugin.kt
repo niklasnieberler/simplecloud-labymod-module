@@ -13,7 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin
 class SpigotPlugin : JavaPlugin() {
 
     override fun onEnable() {
-        LabyModule()
+        LabyModule(this)
         registerEvents()
 
     }

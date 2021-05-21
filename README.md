@@ -109,7 +109,7 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
     "serverBannerList": [
       {
         "serverGroup": "ALL_SERVERS",
-        "permission": "ALL_SERVERS",
+        "permission": "ALL_PLAYERS",
         "url": "https://i.imgur.com/eTQJ1IX.png"
       },
       {

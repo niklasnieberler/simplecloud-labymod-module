@@ -5,8 +5,8 @@ import net.labymod.serverapi.api.LabyAPI
 import net.mrmanhd.simplecloud.module.labymod.LabyModule
 import net.mrmanhd.simplecloud.module.labymod.config.Config
 import net.mrmanhd.simplecloud.module.labymod.config.configuration.playinggamemode.PlayingGamemode
-import net.mrmanhd.simplecloud.module.labymod.config.configuration.serverbanner.ServerBanner
 import org.bukkit.entity.Player
+import org.bukkit.scheduler.BukkitRunnable
 
 /**
  * Created by MrManHD
@@ -17,14 +17,15 @@ class PlayingGamemodeHandler {
 
     fun handlePlayingGamemode(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
 
-        getMainPlayingGamemode(config)?.let {
+        getPlayingGamemode(config, cloudPlayer)?.let {
             handlePlayerPermission(it, player, cloudPlayer)
             return
         }
 
-        getPlayingGamemode(config, cloudPlayer)?.let {
+        getMainPlayingGamemode(config)?.let {
             handlePlayerPermission(it, player, cloudPlayer)
         }
+
     }
 
     private fun handlePlayerPermission(playingGamemode: PlayingGamemode, player: Player, cloudPlayer: ICloudPlayer) {
@@ -35,7 +36,12 @@ class PlayingGamemodeHandler {
         val playingGameModeTransmitter = LabyAPI.getService().playingGameModeTransmitter
         val replaceString = LabyModule.instance.replaceString(playingGamemode.message, cloudPlayer.getConnectedServer()!!)
 
-        playingGameModeTransmitter.transmit(player.uniqueId, replaceString)
+        object : BukkitRunnable() {
+            override fun run() {
+                playingGameModeTransmitter.transmit(player.uniqueId, replaceString)
+            }
+
+        }.runTaskLater(LabyModule.instance.javaPlugin!!, 10)
 
     }
 

@@ -1,6 +1,5 @@
 package net.mrmanhd.simplecloud.module.labymod.handler
 
-import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import eu.thesimplecloud.api.player.ICloudPlayer
 import net.labymod.serverapi.api.LabyAPI
@@ -17,12 +16,12 @@ class ServerBannerHandler {
 
     fun handleServerBanner(config: Config, cloudPlayer: ICloudPlayer, player: Player) {
 
-        getMainServerBanner(config)?.let {
+        getServerBanner(config, cloudPlayer)?.let {
             handlePlayerPermission(it, player)
             return
         }
 
-        getServerBanner(config, cloudPlayer)?.let {
+        getMainServerBanner(config)?.let {
             handlePlayerPermission(it, player)
         }
 

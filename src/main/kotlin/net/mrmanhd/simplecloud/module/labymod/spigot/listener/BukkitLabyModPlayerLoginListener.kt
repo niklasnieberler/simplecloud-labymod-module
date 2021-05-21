@@ -25,7 +25,6 @@ class BukkitLabyModPlayerLoginListener : Listener {
 
 
         handle(config, cloudPlayer, player)
-
     }
 
     private fun handle(config: Config, cloudPlayer: ICloudPlayer, player: Player) {

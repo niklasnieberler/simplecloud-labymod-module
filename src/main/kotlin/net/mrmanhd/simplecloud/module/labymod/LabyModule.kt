@@ -3,13 +3,16 @@ package net.mrmanhd.simplecloud.module.labymod
 import eu.thesimplecloud.api.service.ICloudService
 import net.mrmanhd.simplecloud.module.labymod.config.ConfigLoader
 import net.mrmanhd.simplecloud.module.labymod.handler.*
+import org.bukkit.plugin.java.JavaPlugin
 
 /**
  * Created by MrManHD
  * Class create at 03.05.2021 21:42
  */
 
-class LabyModule {
+class LabyModule(
+    val javaPlugin: JavaPlugin? = null
+) {
 
     val configLoader = ConfigLoader()
     val playingGamemodeHandler = PlayingGamemodeHandler()
