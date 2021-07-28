@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/MrManHD/simplecloud-labymod-module">
-    <img src="https://mrmanhd.tryhub.de/img/github-logo.png" alt="Logo" width="80" height="80">
+    <img src="https://mrmanhd.net/img/github-logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">LabyMod Module</h3>
@@ -9,7 +9,7 @@
   <p align="center">
     Ein LabyMod-Module für SimpleCloud
     <br />
-    <a href="https://mrmanhd.tryhub.de/dl/simplecloud-labymod-module.jar">Download</a>
+    <a href="https://dl.mrmanhd.net/simplecloud-labymod-module.jar">Download</a>
     ·
     <a href="https://github.com/MrManHD/simplecloud-labymod-module/issues">Report Bug</a>
     ·
@@ -27,9 +27,9 @@ Das ist ein CloudModule für SimpleCloud. Damit kannst du ganz einfach die Featu
  <br />
     
 ## Installation
-1. Lade dir das LabyMod-Module [HIER](https://mrmanhd.tryhub.de/dl/simplecloud-labymod-module.jar) herunter.
+1. Lade dir das LabyMod-Module [HIER](https://dl.mrmanhd.net/simplecloud-labymod-module.jar) herunter.
 
-2. Für dieses Module brauchst du die LabyModApi. <br /> Die Api findest du [HIER](https://github.com/LabyMod/labymod-server-api/) oder lade dir die .jar Datei gleich [HIER](https://mrmanhd.tryhub.de/dl/labyapi.jar) herunter.
+2. Für dieses Module brauchst du die LabyModApi. <br /> Die Api findest du [HIER](https://github.com/LabyMod/labymod-server-api/) oder lade dir die .jar Datei gleich [HIER](https://dl.mrmanhd.net//labyapi.jar) herunter.
 
 3. Nun musst du die LabyModApi in das Plugins Verzeichnis jedes Spigot-Servers hochladen, <br /> oder in das Template Verzeichnis `EVERY_SERVER` ziehen.
 
@@ -284,5 +284,4 @@ Die Cinescope höhe geht nur von 0% bis 50%!
 Twitter: [@MrManHD](https://twitter.com/MrManHD)
 <br />
 Discord: MrManHD | ƝƖƙƚƛƧ#5363
-<br />
-Discord-Server: [discord.TryHub.de](https://tryhub.de/discord)
+
